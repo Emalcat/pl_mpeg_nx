@@ -422,12 +422,8 @@ void app_on_audio(plm_t *mpeg, plm_samples_t *samples, void *user) {
 
 
 int main(int argc, char *argv[]) {
-	if (argc < 2) {
-		SDL_Log("Usage: pl_mpeg_player_gl <file.mpg>");
-		exit(1);
-	}
 	
-	app_t *app = app_create(argv[1], APP_TEXTURE_MODE_YCRCB);
+	app_t *app = app_create("intro.mpg", APP_TEXTURE_MODE_YCRCB);
 	while (!app->wants_to_quit) {
 		app_update(app);
 	}
